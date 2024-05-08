@@ -39,11 +39,12 @@ canvas {
 
 /* Apply custom font to input elements */
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+button {  /* Include button in the existing rule */
     font-family: 'CustomFont', Arial, sans-serif;
-    width: 220px; /* Increase width of text boxes */
-    height: 40px; /* Increase height of text boxes */
-    font-size: 18px; /* Increase font size of text boxes */
+    width: 220px; /* You might adjust this for buttons if needed */
+    height: 40px; /* Standard height for inputs and buttons for uniformity */
+    font-size: 18px; /* Increase font size for better readability */
 }
 
 /* Apply grey color to placeholder text */
@@ -79,10 +80,14 @@ input[type="number"]::placeholder {
     justify-content: center;
     align-items: center;
 }
+/* Styling for buttons specifically, if needed */
 #navigation button {
     padding: 5px 10px; /* Adjust padding for better button sizing */
     margin: 5px;
     cursor: pointer; /* Adds a pointer cursor on hover */
+    background-color: #f0f0f0; /* Light grey background for visibility */
+    border: none; /* No border for a modern look */
+    border-radius: 4px; /* Rounded corners */
 }
 
         canvas {
