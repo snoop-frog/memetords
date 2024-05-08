@@ -122,6 +122,8 @@ input[type="number"]::placeholder {
     <input type="number" id="fontSizeBottom" placeholder="Font Size" min="10" max="60" value="48" oninput="renderVariation(currentVariationIndex)">
     <button onclick="navigateVariation(-1)">&#9664; Prevtord</button>
     <button onclick="navigateVariation(1)">Nextord &#9654;</button>
+    <button id="downloadButton">Download Tord</button>
+
 </div>
 
 
@@ -268,6 +270,14 @@ function loadById() {
         renderVariation(currentVariationIndex);
     }
 }
+document.getElementById('downloadButton').addEventListener('click', function() {
+    const canvas = document.getElementById('canvas');
+    const dataUrl = canvas.toDataURL('image/png'); // Creates a PNG image
+    const link = document.createElement('a');
+    link.download = 'canvas-image.png'; // Specify the download file name
+    link.href = dataUrl;
+    link.click(); // Trigger the download
+});
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
